@@ -17,25 +17,57 @@ const projects = [
     {
         num: "01",
         category: "frontend",
-        title: "project 1",
-        description: "Description",
+        title: "Automated Shopping Cart",
+        type: "Team",
+        description: "This system automates product retrieval, saving time and reducing effort. It offers a user-friendly app for seamless ordering, real-time inventory monitoring, and environmental checks. With automatic retrieval carts, low-stock alerts, and secure access, it’s scalable and provides valuable consumption analytics, enhancing inventory management and customer satisfaction.\n (Team)",
         stack: [
             {
-                name: "HTML 5"
+                name: "Arduino, IOT"
             },
         ],
-        image: '/assets/work/thumb1.png',
+        image: '/assets/work/project1.jpeg',
         live: '',
         github: '',
     },
     {
         num: "02",
         category: "Backend",
-        title: "project 2",
-        description: "Description",
+        title: "MineResQ",
+        description: "An advanced IoT-based gas detection and alert system designed for gem mines, incorporating two-way long-distance communication capabilities. This system enables real-time monitoring of gas levels within the mine and facilitates immediate alerts and data transmission to and from the surface, ensuring enhanced safety and effective management of potential hazards",
+        type: "Team",
         stack: [
             {
-                name: "HTML 5"
+                name: "Arduino, IOT, Radio communication"
+            },
+        ],
+        image: '/assets/work/thumb2.png',
+        live: '',
+        github: '',
+    },
+    {
+        num: "03",
+        category: "Backend",
+        title: "Learning Management System",
+        description: "LMS featuring course management, student enrolment, lecturer management and progress tracking for lectures, students and administrators",
+        type: "Individual",
+        stack: [
+            {
+                name: "React.js, Node.js, Express.js, MongoDB"
+            },
+        ],
+        image: '/assets/work/thumb2.png',
+        live: '',
+        github: '',
+    },
+    {
+        num: "04",
+        category: "Backend",
+        title: "Studio Management System",
+        description: "A system to System to streamline studio operations, including employee management, stock management, client management and workload management. The system enhances resource allocation and time management with features like online booking, detailed client records, and efficient work distribution.",
+        type: "Team",
+        stack: [
+            {
+                name: "React.js, Node.js, Express.js, MSSQL"
             },
         ],
         image: '/assets/work/thumb2.png',
@@ -64,12 +96,15 @@ const Projects = () => {
                 <div className="flex flex-col xl:flex-row xl:gap-[30px]">
                     <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
                         <div className="flex flex-col gap-[30px] h-[50%]">
-                            <div className="text-8xl leading-none font-extrabold text-green-400">
+                            <div className="text-7xl leading-none font-extrabold text-green-400">
                                 {project.num}
                             </div>
-                            <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-green-400 transition-all duration-500 capitalize">
-                                {project.category} project
+                            <div>
+                            <h2 className="text-[40px] font-bold leading-none text-white group-hover:text-green-400 transition-all duration-500 capitalize">
+                                {project.title}
                             </h2>
+                            <p className="text-while/60">({project.type})</p>
+                            </div>
                             <p className="text-while/60">{project.description}</p>
                             <ul>
                                 {project.stack.map((item, index) =>{
