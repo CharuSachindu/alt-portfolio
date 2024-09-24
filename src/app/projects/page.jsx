@@ -5,7 +5,7 @@ import React, {useState} from "react";
 import {Swiper, SwiperSlide} from "swiper/react";
 import "swiper/css"
 
-import { BsArrowUpRight, BsGithub} from 'react-icons/bs'
+import { BsArrowUpRight, BsGithub, BsLinkedin} from 'react-icons/bs'
 
 import Link from "next/link";
 import Image from "next/image";
@@ -16,10 +16,10 @@ import SliderButtons from "@/components/SliderButtons";
 const projects = [
     {
         num: "01",
-        category: "frontend",
+        category: "Hardware",
         title: "Automated Shopping Cart",
         type: "Team",
-        description: "This system automates product retrieval, saving time and reducing effort. It offers a user-friendly app for seamless ordering, real-time inventory monitoring, and environmental checks. With automatic retrieval carts, low-stock alerts, and secure access, it’s scalable and provides valuable consumption analytics, enhancing inventory management and customer satisfaction.\n (Team)",
+        description: "This system automates product retrieval, saving time and reducing effort. It offers a user-friendly app for seamless ordering, real-time inventory monitoring, and environmental checks. With automatic retrieval carts, low-stock alerts, and secure access, it’s scalable and provides valuable consumption analytics, enhancing inventory management and customer satisfaction.\n",
         stack: [
             {
                 name: "Arduino, IOT"
@@ -28,10 +28,11 @@ const projects = [
         image: '/assets/work/project1.jpeg',
         live: '',
         github: '',
+        linkedin: 'https://www.linkedin.com/feed/update/urn:li:activity:7241713979369119744/',
     },
     {
         num: "02",
-        category: "Backend",
+        category: "Hardware",
         title: "MineResQ",
         description: "An advanced IoT-based gas detection and alert system designed for gem mines, incorporating two-way long-distance communication capabilities. This system enables real-time monitoring of gas levels within the mine and facilitates immediate alerts and data transmission to and from the surface, ensuring enhanced safety and effective management of potential hazards",
         type: "Team",
@@ -40,13 +41,14 @@ const projects = [
                 name: "Arduino, IOT, Radio communication"
             },
         ],
-        image: '/assets/work/thumb2.png',
+        image: '/assets/work/project2.jpeg',
         live: '',
         github: '',
+        linkedin: '',
     },
     {
         num: "03",
-        category: "Backend",
+        category: "Full-Stack",
         title: "Learning Management System",
         description: "LMS featuring course management, student enrolment, lecturer management and progress tracking for lectures, students and administrators",
         type: "Individual",
@@ -57,11 +59,12 @@ const projects = [
         ],
         image: '/assets/work/thumb2.png',
         live: '',
-        github: '',
+        github: 'https://github.com/CharuSachindu/timetablesheduler',
+        linkedin: '',
     },
     {
         num: "04",
-        category: "Backend",
+        category: "Full-Stack",
         title: "Studio Management System",
         description: "A system to System to streamline studio operations, including employee management, stock management, client management and workload management. The system enhances resource allocation and time management with features like online booking, detailed client records, and efficient work distribution.",
         type: "Team",
@@ -70,9 +73,10 @@ const projects = [
                 name: "React.js, Node.js, Express.js, MSSQL"
             },
         ],
-        image: '/assets/work/thumb2.png',
+        image: '/assets/work/project4.jpg',
         live: '',
         github: '',
+        linkedin: '',
     },
 ]
 
@@ -119,6 +123,7 @@ const Projects = () => {
                             <div className="border border-white/20"></div>
                             <div className="flex items-center gap-4">
                                 {/* Live Project Button */}
+                            {project.live !== "" ? (
                                 <Link href={project.live}>
                                     <TooltipProvider delayDuration={100}>
                                         <Tooltip>
@@ -126,12 +131,14 @@ const Projects = () => {
                                                 <BsArrowUpRight className="text-white text-3xl group-hover:text-green-400" />
                                             </TooltipTrigger>
                                             <TooltipContent>
-                                                <p>Live project</p>
+                                                <p>Live projects</p>
                                             </TooltipContent>
                                         </Tooltip>
                                     </TooltipProvider>
                                 </Link>
+                                  ) : null}
                                 {/* Github button */}
+                                {project.github !== "" ? (
                                 <Link href={project.github}>
                                     <TooltipProvider delayDuration={100}>
                                         <Tooltip>
@@ -144,6 +151,21 @@ const Projects = () => {
                                         </Tooltip>
                                     </TooltipProvider>
                                 </Link>
+                                ) : null}
+                                {project.linkedin !== "" ? (
+                                <Link href={project.linkedin}>
+                                    <TooltipProvider delayDuration={100}>
+                                        <Tooltip>
+                                            <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                                                <BsLinkedin className="text-white text-3xl group-hover:text-green-400" />
+                                            </TooltipTrigger>
+                                            <TooltipContent>
+                                                <p>LinkedIn post</p>
+                                            </TooltipContent>
+                                        </Tooltip>
+                                    </TooltipProvider>
+                                </Link>
+                            ) : null}
                             </div>
                         </div>
                     </div>

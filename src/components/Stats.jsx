@@ -22,6 +22,10 @@ const stats = [
     },
 ]
 
+
+
+
+
 const Stats = () => {
     return (
         <section className="pt-4 pb-12 xl:pt-0 xl:pb-0">
@@ -35,7 +39,7 @@ const Stats = () => {
                                 duration={5}
                                 delay={2}
                                 className="text-4xl xl:text-6xl font-extrabold" />
-                                <p className={`${(item.text.lenght < 15 ? "max-w-[150px]" : "max-w-[150px]")} leading-snug text-white/80`}>{item.text}</p>
+                                <p className={`${(item.text.length < 15 ? "max-w-[150px]" : "max-w-[150px]")} leading-snug text-white/80`}>{item.text}</p>
                             </div>
                         )
                     })}
