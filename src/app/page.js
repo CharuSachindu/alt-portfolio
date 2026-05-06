@@ -2,6 +2,9 @@
 import Photo from "@/components/Photo";
 import Socials from "@/components/Socials";
 import Stats from "@/components/Stats";
+import AboutMeSection from "@/components/sections/AboutMeSection";
+import ProjectsSection from "@/components/sections/ProjectsSection";
+import ContactSection from "@/components/sections/ContactSection";
 import { Button } from "@/components/ui/button"
 // import { FiDownload } from "react-icons/fi"
 import { FiDownload } from "react-icons/fi";
@@ -34,10 +37,12 @@ const Home = async () => {
               I am eager to apply my skills and grow in a dynamic environment.
               </p>
               <div className="flex flex-col xl:flex-row items-center gap-8">
-                <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
-                  <span>Dwnload CV</span>
-                  <FiDownload className="text-xl" />
-                </Button>
+                <a href="/assets/resume/CharuSachindu_CV.pdf" download>
+                  <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
+                    <span>Download CV</span>
+                    <FiDownload className="text-xl" />
+                  </Button>
+                </a>
                 <div className="mb-8 xl:mb-0">
                   <Socials containerStyles="flex gap-6" iconStyles="w-9 h-9 border border-green-400 rounded-full flex
                justify-center items-center text-green-400 text-base hover:bg-green-400 hover:text-primary hover:transition-all duration-500" />
@@ -51,6 +56,9 @@ const Home = async () => {
         </div>
         <Stats />
       </section>
+      <AboutMeSection />
+      <ProjectsSection />
+      <ContactSection />
     </>
   )
 }
